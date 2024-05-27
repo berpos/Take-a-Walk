@@ -10,4 +10,5 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
   validates :phone_number, uniqueness: true, presence: true
+  validates :phone_number, numericality: { only_integer: true }, length: { in: 10..15 }
 end
