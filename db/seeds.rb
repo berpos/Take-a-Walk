@@ -1,7 +1,7 @@
 puts 'cleaning database'
 Walker.destroy_all
 puts 'creating new database'
-10.times do
+5.times do
   Walker.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,

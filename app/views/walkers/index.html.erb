@@ -1,9 +1,17 @@
 <h1>All the walkers around you</h1>
 
-<ul>
-  <% @walkers.each do |walker| %>
-  <li>
-    <%= walker.first_name%> <%= walker.last_name %>
-  </li>
+<%# TODO: Add photos to the loop and models/migration maybe make it a carousel?? %>
+
+<div class="home-container">
+  <div class="walker-cards">
+    <% @walkers.each do |walker| %>
+    <div class="walker-card-info">
+      <%= image_tag("logo.png", class: "walker-image") %>
+      <p><%= link_to "#{walker.first_name} #{walker.last_name}", walker_path(walker), class: "text-decoration-none" %></p>
+      <p><%= walker.phone_number %></p>
+    </div>
   <% end %>
-</ul>
+  </div>
+</div>
+
+<%# ask how should i make the cards %>
