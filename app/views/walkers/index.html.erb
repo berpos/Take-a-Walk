@@ -1,0 +1,9 @@
+<h1>All the walkers around you</h1>
+
+<ul>
+  <% @walkers.each do |walker| %>
+  <li>
+    <%= walker.first_name%> <%= walker.last_name %>
+  </li>
+  <% end %>
+</ul>
