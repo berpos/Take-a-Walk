@@ -1,5 +1,5 @@
 class WalkersController < ApplicationController
-  before_action :set_walkers, only: %i[show]
+  before_action :set_walkers, only: %i[show update]
 
   def index
     @walkers = Walker.all
@@ -9,15 +9,24 @@ class WalkersController < ApplicationController
   end
 
   def new
+    @walker = Walker.new
   end
 
   def create
+    @walker = Walker.new(walker_params)
+    if @walker.save
+      redirect_to walker_path(@walker)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
   end
 
   def update
+    @set_walkers.update(walker_params)
+    redirect_to walker_path(@walker)
   end
 
   def destroy
@@ -30,6 +39,6 @@ class WalkersController < ApplicationController
   end
 
   def walker_params
-    params.require(:walker).permit(:first_name, :last_name)
+    params.require(:walker).permit(:first_name, :last_name, :phone_number, photos: [])
   end
 end
