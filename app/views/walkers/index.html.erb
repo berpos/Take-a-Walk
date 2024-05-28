@@ -6,7 +6,7 @@
   <div class="walker-cards">
     <% @walkers.each do |walker| %>
     <div class="walker-card-info m-4">
-      <%= image_tag("logo.png", class: "walker-image") %>
+      <%= image_tag('logo.png', class: "walker-image") %>
       <p><%= link_to "#{walker.first_name} #{walker.last_name}", walker_path(walker), class: "text-decoration-none" %></p>
       <p><%= walker.phone_number %></p>
     </div>
