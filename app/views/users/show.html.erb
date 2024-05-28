@@ -1,0 +1,20 @@
+
+<div class="user-container">
+  <div class="user-card border">
+    <div><%= image_tag('green-profilepic.png', class: "user-image")  %></div>
+    <div class="user-info">
+      <h1><strong><%= @user.first_name %> <%= @user.last_name %></strong></h1>
+      <div class="conteudo">
+        <p><strong><%= "Phone number :" %></strong></p>
+        <p><%= "->" %> <%= @user.phone_number %></p>
+        <p><strong><%= "Email :" %></strong></p>
+        <p><%= "->" %> <%= @user.email %></p>
+        <% if @user.company_name != nil %>
+          <p><strong>Company name :</strong></p>
+          <p><%= "->" %> <%= @user.company_name  %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <p><%= link_to "back to Home", walkers_path, class: "link-to-home" %></p>
+</div>
