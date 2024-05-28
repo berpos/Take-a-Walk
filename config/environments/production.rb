@@ -37,7 +37,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = :cloudinary
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -74,7 +74,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # TODO: CHANGE URL FOR HOST:
-  
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
