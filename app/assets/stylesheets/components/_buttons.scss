@@ -1,0 +1,14 @@
+.btn-primary {
+  width: 100%;
+  background-color: #00d062;
+  color: white;
+  border: none;
+  // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  // flex-direction: column;
+  border-radius: 7px;
+}
+
+.btn-primary:hover{
+  background-color: #058743;
+}
