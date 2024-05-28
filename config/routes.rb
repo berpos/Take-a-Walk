@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   # TODO: Leave it as it is but check if we need to nest resources
   resources :walkers do
     # Add other routes
+    resources :bookings, only: %i[new create]
   end
 end
