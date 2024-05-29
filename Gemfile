@@ -2,7 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+#gem for image cloud
 gem "cloudinary"
+
 # Devise gem
 gem "devise"
 
