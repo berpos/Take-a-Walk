@@ -43,11 +43,29 @@
 }
 
 .btn-delete {
-  background-color: red;
-  color: white;
+  background-color: #D22B2B;
+  color: #fff;
   border: none;
-  // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  // flex-direction: column;
   border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #a12222;
+  color: #fff;
+}
+
+.btn-outline-2 {
+  border: 2px solid #000;
+  border-color: #00D062;
+  color: #00D062;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-2:hover {
+  background-color: #00D062;
+  color: #fff;
 }
