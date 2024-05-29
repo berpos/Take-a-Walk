@@ -1,0 +1,32 @@
+<div class="walker-profile">
+  <div class="images-container d-flex justify-content-center mb-4 gap-3">
+    <%# TODO: for each photo display here (maximum 4 photos) with option to see all photos %>
+    <%= image_tag('logo.png', class: "walker-image") %>
+    <%= image_tag('logo.png', class: "walker-image") %>
+    <%= image_tag('logo.png', class: "walker-image") %>
+    <%= image_tag('logo.png', class: "walker-image") %>
+  </div>
+  <div class="d-flex justify-content-evenly gap-3">
+    <div class="walker-info text-center mx-auto" >
+      <h4 class="fw-bold"><%= "#{@walker.first_name} #{@walker.last_name}" %></h4>
+      <p>Portugal, Sintra</p>
+      <%# <p> TODO: add walker location to table</p> %>
+      <%# <p> TODO: add a walker small description</p> %>
+      <div class="walker-description">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Fugit enim eos fugiat necessitatibus voluptates ipsam totam,
+        omnis ratione ex saepe eligendi sequi accusamus quo molestias praesentium,
+        dignissimos incidunt magni nostrum?</p>
+      </div>
+      <%# <p> TODO: add walker usual routes</p> %>
+      <div class="calendar">
+      <%# TODO: add calendar %>
+        <p>Calendar PlaceHolder</p>
+      </div>
+      <%# TODO: add form to redirect to checkout %>
+    </div>
+    <div class="checkout-form">
+      <p>Placeholder for form</p>
+    </div>
+  </div>
+</div>
