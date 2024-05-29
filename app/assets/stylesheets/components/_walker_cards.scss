@@ -1,6 +1,6 @@
 .walker-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
 }
 
