@@ -1,4 +1,4 @@
-<h1>All the walkers around you</h1>
+<h1 class="text-center fw-bold " style="color: #00D062; font-size: 2rem;">ALL THE WALKERS AROUND YOU</h1>
 
 <%# TODO: Add photos to the loop and models/migration maybe make it a carousel?? %>
 
@@ -6,9 +6,12 @@
   <div class="walker-cards">
     <% @walkers.each do |walker| %>
     <div class="walker-card-info m-4">
-      <%= image_tag('logo.png', class: "walker-image") %>
-      <p><%= link_to "#{walker.first_name} #{walker.last_name}", walker_path(walker), class: "text-decoration-none" %></p>
-      <p><%= walker.phone_number %></p>
+      <% if walker.photos.any? %>
+        <%= cl_image_tag walker.photos.first.key, class: "walker-image" %>
+      <% else %>
+        <%= image_tag('logo.png', class: "walker-image") %>
+      <% end %>
+      <p><%= link_to "#{walker.first_name} #{walker.last_name} - #{walker.phone_number}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
     </div>
   <% end %>
   </div>

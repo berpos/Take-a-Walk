@@ -1,9 +1,15 @@
 .walker-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
 }
 
 .walker-card-info {
   position: relative;
+}
+
+.walker-name {
+  color: #00D062;
+  font-size: medium;
+  font-weight: 600;
 }
