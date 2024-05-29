@@ -1,26 +1,45 @@
-.btn-primary {
-  background-color: #00d062;
+.btn-normal {
+  background-color: #00D062;
   color: white;
   border: none;
-  // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  // flex-direction: column;
   border-radius: 7px;
+  transition: all 0.3s ease;
 }
 
-.btn-primary:hover{
-  background-color: #058743;
+.btn-normal:hover{
+  background-color: #07ae58;
+  color: #fff;
 }
 
-.btn-primary-log-in {
+.btn-log-in {
   width: 100%;
-  background-color: #00d062;
+  background-color: #00D062;
   color: white;
   border: none;
-  // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  // flex-direction: column;
   border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.btn-log-in:hover{
+  background-color: #07ae58;
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid #000;
+  border-color: #00D062;
+  width: 100%;
+  color: #00D062;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #00D062;
+  color: #fff;
 }
 
 .btn-delete {
