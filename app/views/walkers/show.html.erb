@@ -29,15 +29,16 @@
         </div>
         <%# TODO: add form to redirect to checkout %>
       </div>
-  </div>
-
-  <div class="d-flex flex-column justify-content-end">
-    <div class="checkout-form" style="height: 20vh">
-      <p>Placeholder for form</p>
+      <%# TODO: add form to redirect to checkout %>
+      <%= link_to "Delete", walker_path(@walker),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-delete" %>
     </div>
+    <%# <div class="checkout-form"> %>
+      <%# <p>Placeholder for form</p> %>
+      <%= render 'bookings/booking_form' %>
+    <%# </div> %>
+
     <div>
       <%= link_to "Edit profile", edit_walker_path(@walker), class: "btn btn-normal" %>
-
       <%= link_to "Back", walkers_path, class: "btn btn-outline-secondary" %>
     </div>
   </div>
