@@ -1,14 +1,12 @@
-
-
-<div class="walker-profile d-flex justify-content-around">
+<div class="walker-profile d-flex justify-content-around mx-auto">
 
   <div class="">
-    <div class="images-container d-flex justify-content-between mb-4 gap-3">
+    <div class="images-container d-flex justify-content-between mt-3 mb-4 gap-3">
       <%# TODO: for each photo display here (maximum 4 photos) with option to see all photos %>
-      <%= image_tag('logo.png', class: "walker-image") %>
-      <%= image_tag('logo.png', class: "walker-image") %>
-      <%= image_tag('logo.png', class: "walker-image") %>
-      <%= image_tag('logo.png', class: "walker-image") %>
+      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
+      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
+      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
+      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
     </div>
 
     <div class="walker-info text-center mx-auto" >
@@ -28,18 +26,17 @@
           <p>Calendar PlaceHolder</p>
         </div>
         <%# TODO: add form to redirect to checkout %>
+        <div class="p-3">
+          <%= link_to "Delete", walker_path(@walker),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-delete me-2" %>
+          <%= link_to "Edit profile", edit_walker_path(@walker), class: "btn btn-normal me-2" %>
+          <%= link_to "Back", walkers_path, class: "btn btn-outline-2" %>
+        </div>
       </div>
       <%# TODO: add form to redirect to checkout %>
-      <%= link_to "Delete", walker_path(@walker),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-delete" %>
     </div>
-    <%# <div class="checkout-form"> %>
+    <div class="checkout-form">
       <%# <p>Placeholder for form</p> %>
       <%= render 'bookings/booking_form' %>
-    <%# </div> %>
-
-    <div>
-      <%= link_to "Edit profile", edit_walker_path(@walker), class: "btn btn-normal" %>
-      <%= link_to "Back", walkers_path, class: "btn btn-outline-secondary" %>
     </div>
   </div>
 

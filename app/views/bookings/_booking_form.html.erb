@@ -1,8 +1,8 @@
-
-<div class="checkout-form">
-  <%= simple_form_for [@walker, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit class: 'btn btn-primary' %>
-  <% end %>
+    <p>PRICE RANGE</p>
+    <%= simple_form_for [@walker, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit "Create Booking", class: "btn btn-normal" %>
+    <% end %>
+  </div>
 </div>
