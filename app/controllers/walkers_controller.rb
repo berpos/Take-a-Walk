@@ -1,5 +1,5 @@
 class WalkersController < ApplicationController
-  before_action :set_walkers, only: %i[show update]
+  before_action :set_walkers, only: %i[show edit]
 
   def index
     @walkers = Walker.all
@@ -26,8 +26,12 @@ class WalkersController < ApplicationController
   end
 
   def update
-    @set_walkers.update(walker_params)
-    redirect_to walker_path(@walker)
+    @walker = Walker.find(params[:id])
+    if @walker.update(walker_params)
+      redirect_to walker_path(@walker), notice: "Walker was successfully updated.", status: :see_other
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
