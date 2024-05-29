@@ -24,9 +24,11 @@
         <p>Calendar PlaceHolder</p>
       </div>
       <%# TODO: add form to redirect to checkout %>
+      <%= link_to "Delete", walker_path(@walker),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-delete" %>
     </div>
-    <div class="checkout-form">
-      <p>Placeholder for form</p>
-    </div>
+    <%# <div class="checkout-form"> %>
+      <%# <p>Placeholder for form</p> %>
+      <%= render 'bookings/booking_form' %>
+    <%# </div> %>
   </div>
 </div>

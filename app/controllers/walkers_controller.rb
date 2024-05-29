@@ -1,5 +1,5 @@
 class WalkersController < ApplicationController
-  before_action :set_walkers, only: %i[show update]
+  before_action :set_walkers, only: %i[show update destroy]
 
   def index
     @walkers = Walker.all
@@ -31,6 +31,8 @@ class WalkersController < ApplicationController
   end
 
   def destroy
+    @walker.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private
