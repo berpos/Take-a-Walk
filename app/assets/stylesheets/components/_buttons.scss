@@ -1,4 +1,4 @@
-.btn-primary {
+.btn-normal {
   background-color: #00d062;
   color: white;
   border: none;
@@ -6,13 +6,15 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   // flex-direction: column;
   border-radius: 7px;
+  transition: all 0.3s ease;
 }
 
-.btn-primary:hover{
+.btn-normal:hover{
   background-color: #058743;
+  color: #fff;
 }
 
-.btn-primary-log-in {
+.btn-log-in {
   width: 100%;
   background-color: #00d062;
   color: white;
@@ -21,4 +23,10 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   // flex-direction: column;
   border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.btn-log-in:hover{
+  background-color: #058743;
+  color: #fff;
 }

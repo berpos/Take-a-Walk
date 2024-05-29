@@ -1,5 +1,5 @@
 class WalkersController < ApplicationController
-  before_action :set_walkers, only: %i[show update]
+  before_action :set_walkers, only: %i[show edit update]
 
   def index
     @walkers = Walker.all
