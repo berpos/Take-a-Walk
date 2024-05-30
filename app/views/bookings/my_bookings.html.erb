@@ -1,45 +1,17 @@
-<div class="countainer row justify-content-center">
-  <div class="col col-6">
-    <h1>Confirmar e pagar</h1>
-    <div class="card-msg">
-      <h2>You are luky</h2>
-      <p><%= @my_bookings.first.walker.first_name %> is usually booked</p>
-    </div>
-    <div>
-      <P>WELCOME</P>
-      <ul> # change the variable
-        <%@my_bookings.each do |booking|%>
-          <div class="p-3 mb-3 card">
-            <p><strong>Booked with <%= "#{booking.walker.first_name} #{booking.walker.last_name}" %></strong></p>
-            <p><strong>Booked at <%= booking.start_date %></strong></p>
-            <p><strong> to <%= booking.end_date %></strong></p>
-
-            <p><small>congratilations your booking</small></p>
-            <span>£5.55</span>
-          </div>
-        <% end %>
-      </ul>
-    </div>
-    <div class="form-check">
-      <p>payment method</p>
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-      <label class="form-check-label" for="exampleRadios1">
-        Default radio
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-      <label class="form-check-label" for="exampleRadios2">
-        Second default radio
-      </label>
-    </div>
+<h2 class="text-center mt-3">My Bookings</h2>
+<div class="countainer row justify-content-center mt-3">
+  <div class="col col-5">
+    <%@my_bookings.each do |booking|%>
+      <div class="booking-card mb-2">
+        <%= cl_image_tag booking.walker.photos.first.key %>
+        <div class="booking-card-info p-3">
+          <p><strong>Booked with <%= "#{booking.walker.first_name} #{booking.walker.last_name}" %></strong></p>
+          <p><strong>Booked at <%= booking.start_date %></strong></p>
+          <p><strong> to <%= booking.end_date %></strong></p>
+          <p><small>congratulations your booking</small></p>
+          <span>£5.55</span>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="checkout-form col col-3 mt-3" id="booking-card">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>  </div>
-
 </div>

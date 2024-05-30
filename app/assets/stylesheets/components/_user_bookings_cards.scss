@@ -1,0 +1,32 @@
+.booking-card {
+  overflow: hidden;
+  height: 10rem;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.booking-card img {
+  height: 100%;
+  width: 30%;
+  object-fit: cover;
+}
+
+.booking-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.booking-card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.booking-card .card-product-infos {
+  padding: 16px;
+}
