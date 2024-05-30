@@ -1,8 +1,8 @@
-    <p>PRICE RANGE</p>
+    <p><strong>PRICE RANGE</strong></p>
     <%= simple_form_for [@walker, @booking] do |f| %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
-      <%= f.submit "Create Booking", class: "btn btn-normal" %>
+      <%= f.submit "Create Booking", class: "btn btn-normal booking" %>
     <% end %>
   </div>
 </div>

@@ -1,40 +1,44 @@
 <div class="walker-profile d-flex justify-content-around mx-auto">
 
   <div class="">
-    <div class="images-container d-flex justify-content-between mt-3 mb-4 gap-3">
-      <%# TODO: for each photo display here (maximum 4 photos) with option to see all photos %>
-      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
-      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
-      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
-      <%= image_tag('dog_walk_5.jpeg', class: "walker-image") %>
-    </div>
 
-    <div class="walker-info text-center mx-auto" >
-        <h4 class="fw-bold"><%= "#{@walker.first_name} #{@walker.last_name}" %></h4>
-        <p>Portugal, Sintra</p>
-        <%# <p> TODO: add walker location to table</p> %>
-        <%# <p> TODO: add a walker small description</p> %>
-        <div class="walker-description">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Fugit enim eos fugiat necessitatibus voluptates ipsam totam,
-          omnis ratione ex saepe eligendi sequi accusamus quo molestias praesentium,
-          dignissimos incidunt magni nostrum?</p>
+     <div class="image-container image-height col">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-inner">
+            <% @walker.photos.each do |photo|%>
+              <div class="carousel-item active">
+                <%= cl_image_tag photo.key, class: "d-block w-100" %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <%# <p> TODO: add walker usual routes</p> %>
-        <div class="calendar">
-        <%# TODO: add calendar %>
-          <p>Calendar PlaceHolder</p>
-        </div>
-        <%# TODO: add form to redirect to checkout %>
-        <div class="p-3">
-          <%= link_to "Delete", walker_path(@walker),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-delete me-2" %>
-          <%= link_to "Edit profile", edit_walker_path(@walker), class: "btn btn-normal me-2" %>
-          <%= link_to "Back", walkers_path, class: "btn btn-outline-2" %>
-        </div>
+      </div>
+
+
+      <div class="walker-info text-center" >
+          <h4 class="fw-bold"><%= "#{@walker.first_name} #{@walker.last_name}" %></h4>
+          <p>Portugal, Sintra</p>
+          <%# <p> TODO: add walker location to table</p> %>
+          <%# <p> TODO: add a walker small description</p> %>
+          <div class="walker-description">
+            <p><%=  @walker.description %></p>
+          </div>
+          <%# <p> TODO: add walker usual routes</p> %>
+
+          <%# TODO: add form to redirect to checkout %>
+
       </div>
       <%# TODO: add form to redirect to checkout %>
     </div>
-    <div class="checkout-form">
+    <div class="checkout-form col">
       <%# <p>Placeholder for form</p> %>
       <%= render 'bookings/booking_form' %>
     </div>
