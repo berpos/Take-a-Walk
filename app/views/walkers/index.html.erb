@@ -7,19 +7,18 @@
   </div>
 </div>
 
-<div class="home-container">
-  <div class="walker-cards">
-    <% @walkers.each do |walker| %>
-    <div class="walker-card-info m-4">
-      <% if walker.photos.any? %>
-        <%= cl_image_tag walker.photos.first.key, class: "walker-image" %>
-      <% else %>
-        <%= image_tag('logo.png', class: "walker-image") %>
-      <% end %>
-      <p><%= link_to "#{walker.first_name} #{walker.last_name} - #{walker.phone_number}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
-    </div>
-  <% end %>
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: walkers_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn-normal-search" %>
+    <% end %>
   </div>
 </div>
 
+<%= render "walkers_list" %>
 <%# ask how should i make the cards %>

@@ -3,6 +3,13 @@ class WalkersController < ApplicationController
 
   def index
     @walkers = Walker.all
+
+    if params[:query].present?
+      sql_subquery = "first_name ILIKE :query OR last_name ILIKE :query"
+      @walkers = @walkers.where(sql_subquery, query: "%#{params[:query]}%")
+    else
+      @walkers = Walker.all
+    end
   end
 
   def show
@@ -15,8 +22,9 @@ class WalkersController < ApplicationController
 
   def create
     @walker = Walker.new(walker_params)
+    @walker.user_id = current_user.id
     if @walker.save
-      redirect_to walker_path(@walker)
+      redirect_to my_walkers_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,6 +45,10 @@ class WalkersController < ApplicationController
   def destroy
     @walker.destroy
     redirect_to root_path, status: :see_other
+  end
+
+  def my_walkers
+    @walkers = Walker.where(user_id: current_user.id)
   end
 
   private

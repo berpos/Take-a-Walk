@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+gem "pg_search"
+
 #gem for image cloud
 gem "cloudinary"
 
