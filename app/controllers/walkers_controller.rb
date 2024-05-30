@@ -3,6 +3,7 @@ class WalkersController < ApplicationController
 
   def index
     @walkers = Walker.all
+    @nearby = Walker.near(current_user.address, 10)
   end
 
   def show
@@ -46,6 +47,6 @@ class WalkersController < ApplicationController
   end
 
   def walker_params
-    params.require(:walker).permit(:first_name, :last_name, :phone_number, photos: [])
+    params.require(:walker).permit(:first_name, :last_name, :phone_number, :address, photos: [])
   end
 end
