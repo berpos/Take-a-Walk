@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "walkers#index"
   resources :users, only: :show
   patch 'users/:id', to: 'users#update'
+  get "/my-bookings", to: 'bookings#my_bookings'
   # Resources is creating the 7 routes we need for walkers
   # TODO: Leave it as it is but check if we need to nest resources
   resources :walkers do

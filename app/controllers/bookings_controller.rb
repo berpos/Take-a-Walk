@@ -12,10 +12,15 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.walker = @walker
     if @booking.save
-      redirect_to root_path
+      redirect_to my_bookings_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def my_bookings
+    @my_bookings = Booking.where(user: current_user)
+    @user = current_user
   end
 
   private
