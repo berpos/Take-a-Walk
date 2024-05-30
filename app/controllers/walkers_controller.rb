@@ -46,6 +46,6 @@ class WalkersController < ApplicationController
   end
 
   def walker_params
-    params.require(:walker).permit(:first_name, :last_name, :phone_number, photos: [])
+    params.require(:walker).permit(:first_name, :last_name, :phone_number, :description, photos: [])
   end
 end
