@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     # Add other routes
     resources :bookings, only: %i[new create]
   end
+  get "my_walkers", to: "walkers#my_walkers"
 end

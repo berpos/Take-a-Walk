@@ -69,3 +69,13 @@
   background-color: #00D062;
   color: #fff;
 }
+
+.btn-normal-search {
+  background-color: #00D062;
+  color: white;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+  transition: all 0.3s ease
+}
