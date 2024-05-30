@@ -9,16 +9,16 @@
 
 <div class="home-container">
   <div class="walker-cards">
-    <% @walkers.each do |walker| %>
-    <div class="walker-card-info m-4">
-      <% if walker.photos.any? %>
-        <%= cl_image_tag walker.photos.first.key, class: "walker-image" %>
-      <% else %>
-        <%= image_tag('logo.png', class: "walker-image") %>
-      <% end %>
-      <p><%= link_to "#{walker.first_name} #{walker.last_name} - #{walker.phone_number}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
-    </div>
-  <% end %>
+    <% @nearby.each do |walker| %>
+      <div class="walker-card-info m-4">
+        <% if walker.photos.any? %>
+          <%= cl_image_tag walker.photos.first.key, class: "walker-image" %>
+        <% else %>
+          <%= image_tag('Placeholder.png', class: "walker-image") %>
+        <% end %>
+        <p><%= link_to "#{walker.first_name} #{walker.last_name} - #{walker.phone_number}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 

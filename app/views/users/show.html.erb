@@ -6,6 +6,7 @@
     <h2><strong><%= @user.first_name %> <%= @user.last_name %></strong></h2>
     <div class="user-info">
         <p><strong><%= "Phone number :" %></strong> <%= @user.phone_number %></p>
+        <p><strong>Address :</strong> <%= @user.address %></p>
         <p><strong><%= "Email :" %></strong> <%= @user.email %></p>
         <% if @user.company_name != nil %>
           <p><strong>Company name :</strong> <%= @user.company_name  %></p>
