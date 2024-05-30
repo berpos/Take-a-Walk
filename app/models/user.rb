@@ -8,7 +8,10 @@ class User < ApplicationRecord
   has_many :walkers
   has_many :walkers, through: :bookings
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :address, presence: true
   validates :phone_number, uniqueness: true, presence: true
   validates :phone_number, numericality: { only_integer: true }, length: { in: 10..15 }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

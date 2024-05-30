@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+# gem for location
+gem "geocoder"
+
 #gem for image cloud
 gem "cloudinary"
 
