@@ -3,15 +3,14 @@ class WalkersController < ApplicationController
 
   def index
     @walkers = Walker.all
-    
+    @nearby = Walker.near(current_user.address, 10)
+
     if params[:query].present?
       sql_subquery = "first_name ILIKE :query OR last_name ILIKE :query"
-      @walkers = @walkers.where(sql_subquery, query: "%#{params[:query]}%")
+      @nearby = @nearby.where(sql_subquery, query: "%#{params[:query]}%")
     else
-      @walkers = Walker.all
+      @nearby
     end
-
-    @nearby = Walker.near(current_user.address, 10)
   end
 
   def show
