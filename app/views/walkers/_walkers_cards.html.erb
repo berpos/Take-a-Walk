@@ -1,9 +1,7 @@
 <div class="card-trip position-relative">
-  <% <div
-    class="
-      position-absolute m-2 fs-6 end-0 bg-black bg-opacity-50 px-2 py-0 rounded rating">
-    <% <span class="text-warning"><%= walker.first_name.last_name %></span> %>
-  <% </div> %>
+  <div class="position-absolute m-2 fs-6 end-0 bg-black bg-opacity-50 px-2 py-0 rounded rating">
+    <% <span class="text-warning"><%= walker.first_name.last_name %></span>
+  </div> %>
 
   <% if walker.photos.any? %>
         <%= cl_image_tag walker.photos.first.key, class: "walker-image" %>
@@ -19,8 +17,9 @@
           <p>
             <i class="fas fa-quote-left fa-xs text-primary"></i>
             <em><%= walker.phone_number %></em>
-          <% </p></blockquote> %>
-      <% </figure> %> %>
+          </p>
+        </blockquote>
+      </figure>
     </div>
   </div>
 </div>
