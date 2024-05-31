@@ -7,8 +7,8 @@
   </div>
 </div>
 
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
+<div class="d-flex justify-content-center">
+  <div class="col-6 my-3">
     <%= form_with url: walkers_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
