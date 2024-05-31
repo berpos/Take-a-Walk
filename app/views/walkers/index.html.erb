@@ -3,12 +3,12 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/732679/screenshots/4108024/media/265200356b3e3340223e7c747db1c160.gif);">
   <div class="container-banner text-center">
     <h1>ALL THE WALKERS AROUND YOU</strong>!</h1>
-    <p>Find the right walker to your pet.</p>
+    <p>Find the right and closest walker for your pet.</p>
   </div>
 </div>
 
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
+<div class="d-flex justify-content-center">
+  <div class="col-6 my-3">
     <%= form_with url: walkers_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
@@ -19,16 +19,24 @@
     <% end %>
   </div>
 </div>
-<div class="home-container">
-  <div class="walker-cards">
+
+<div class="home-container mt-2">
+  <div class="row gap-4 justify-content-center m-auto">
     <% @nearby.each do |walker| %>
-      <div class="walker-card-info m-4">
-        <% if walker.photos.any? %>
-          <%= cl_image_tag walker.photos.first.key, class: "walker-image" %>
-        <% else %>
-          <%= image_tag('Placeholder.png', class: "walker-image") %>
-        <% end %>
-        <p><%= link_to "#{walker.first_name} #{walker.last_name} - #{walker.phone_number}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
+      <div class="col col-3">
+        <div class="card">
+          <% if walker.photos.any? %>
+            <%= cl_image_tag walker.photos.first.key, class: "card-img" %>
+          <% else %>
+            <%= image_tag('Placeholder.png', class: "card-img") %>
+          <% end %>
+          <div class="card-body">
+            <p><%= link_to "#{walker.first_name} #{walker.last_name}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
+            <% full_distance = Geocoder::Calculations.distance_between([walker.latitude, walker.longitude], [current_user.latitude, current_user.longitude]) %>
+            <p> <%= number_with_precision(full_distance, precision: 2) %>Km away</p>
+            <%= link_to "Details", walker_path(walker), class: "btn btn-normal"%>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

@@ -25,7 +25,7 @@
 
       <div class="walker-info text-center" >
           <h4 class="fw-bold"><%= "#{@walker.first_name} #{@walker.last_name}" %></h4>
-          <p>Portugal, Sintra</p>
+          <p><%= @walker.address %></p>
           <%# <p> TODO: add walker location to table</p> %>
           <%# <p> TODO: add a walker small description</p> %>
           <div class="walker-description">
@@ -38,7 +38,7 @@
       </div>
       <%# TODO: add form to redirect to checkout %>
     </div>
-    <div class="checkout-form col">
+    <div class="checkout-form col text-center">
       <%# <p>Placeholder for form</p> %>
       <%= render 'bookings/booking_form' %>
     </div>
