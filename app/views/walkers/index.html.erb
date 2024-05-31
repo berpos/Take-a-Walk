@@ -32,6 +32,8 @@
           <% end %>
           <div class="card-body">
             <p><%= link_to "#{walker.first_name} #{walker.last_name}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
+            <% full_distance = Geocoder::Calculations.distance_between([walker.latitude, walker.longitude], [current_user.latitude, current_user.longitude]) %>
+            <p> <%= number_with_precision(full_distance, precision: 2) %>Km away</p>
             <%= link_to "Details", walker_path(walker), class: "btn btn-normal"%>
           </div>
         </div>
