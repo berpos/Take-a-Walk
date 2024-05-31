@@ -1,8 +1,31 @@
 <div class="banner-my-walkers">
   <div class="container-banner text-center">
-    <h1>My Walkers</h1>
-    <p>Your awesome team is at your service!</p>
+      <h2>My Walkers</h2>
+      <p>Your awesome team is at your service!</p>
   </div>
 </div>
 
-<%= render "walkers_list" %>
+<div class="home-container mt-2">
+  <div class="row gap-4 justify-content-center m-auto">
+    <% @walkers.each do |walker| %>
+      <div class="col col-3">
+        <div class="card">
+          <% if walker.photos.any? %>
+            <%= cl_image_tag walker.photos.first.key, class: "card-img" %>
+          <% else %>
+            <%= image_tag('Placeholder.png', class: "card-img") %>
+          <% end %>
+          <div class="card-body">
+            <p><%= link_to "#{walker.first_name} #{walker.last_name}", walker_path(walker), class: "text-decoration-none walker-name" %></p>
+
+            <%= link_to "Details", walker_path(walker), class: "btn btn-normal"%>
+            <%= link_to "Edit", edit_walker_path(walker), class: "btn btn-normal"%>
+            <%= link_to "Delete", walker_path(walker), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-delete"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# <%= render "walkers_list" %>

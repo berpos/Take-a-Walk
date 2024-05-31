@@ -1,5 +1,5 @@
 class WalkersController < ApplicationController
-  before_action :set_walkers, only: %i[show edit destroy]
+  before_action :set_walkers, only: %i[show edit update destroy]
 
   def index
     @walkers = Walker.all
@@ -35,7 +35,6 @@ class WalkersController < ApplicationController
   end
 
   def update
-    @walker = Walker.find(params[:id])
     if @walker.update(walker_params)
       redirect_to walker_path(@walker), notice: "Walker was successfully updated.", status: :see_other
     else
@@ -45,7 +44,7 @@ class WalkersController < ApplicationController
 
   def destroy
     @walker.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to my_walkers_path, status: :see_other
   end
 
   def my_walkers
